@@ -264,3 +264,4 @@ def run_rag_pipeline(
         "num_chunks_used": len(retrieved),
         "top_similarity": retrieved[0]["similarity_score"] if retrieved else 0
     }
+# retry
