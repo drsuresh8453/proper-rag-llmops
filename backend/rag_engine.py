@@ -12,7 +12,7 @@ Why OpenAI embeddings?
 - 1536 dimensions — captures much richer semantic meaning
 - text-embedding-3-small is cheap — $0.02 per million tokens
 """
-
+# CI/CD test
 import os
 import uuid
 import chromadb
