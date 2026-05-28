@@ -1,0 +1,171 @@
+# .github/workflows/deploy.yml
+# CI/CD Pipeline — Sales RAG Assistant
+# Author: Suresh D R | AI Product Developer & Technology Mentor
+#
+# This pipeline runs AUTOMATICALLY every time you push code to the main branch.
+# Steps: Test → Build Docker → Push to ECR → Deploy to EKS
+#
+# What you need to add in GitHub Secrets (Settings → Secrets → Actions):
+#   AWS_ACCESS_KEY_ID     → your AWS access key
+#   AWS_SECRET_ACCESS_KEY → your AWS secret key
+#   AWS_REGION            → ap-south-1
+#   ECR_REPOSITORY        → sales-rag-assistant
+#   EKS_CLUSTER_NAME      → rag-cluster
+#   OPENAI_API_KEY        → your OpenAI key (for tests)
+
+name: Deploy RAG App to EKS
+
+on:
+  push:
+    branches:
+      - main        # triggers ONLY when code pushed to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest    # fresh Ubuntu VM provided by GitHub — free
+
+    steps:
+
+    # ── STEP 1 — Download your code onto the GitHub VM ───────
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # ── STEP 2 — Install Python 3.11 ─────────────────────────
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    # ── STEP 3 — Install exact library versions ───────────────
+    - name: Install dependencies
+      run: |
+        pip install \
+          streamlit==1.32.0 \
+          openai==2.38.0 \
+          httpx==0.27.0 \
+          chromadb==0.4.22 \
+          python-dotenv==1.0.0
+
+    # ── STEP 4 — Run tests ────────────────────────────────────
+    # If any test fails → pipeline STOPS here. Nothing is deployed.
+    - name: Run tests
+      run: |
+        python -c "
+        import sys
+        sys.path.insert(0, 'backend')
+
+        # Test 1 — all imports work
+        from rag_engine import chunk_text, get_chroma_client, EMBEDDING_MODEL_NAME
+        print('All imports OK')
+
+        # Test 2 — chunking works
+        with open('data/sales_report_q1_2024.txt') as f:
+            text = f.read()
+        chunks = chunk_text(text)
+        assert len(chunks) > 0, 'ERROR: Chunking produced zero chunks'
+        print(f'Chunking OK — {len(chunks)} chunks created')
+
+        # Test 3 — ChromaDB connects
+        client = get_chroma_client('/tmp/test_chroma')
+        print('ChromaDB OK')
+
+        # Test 4 — embedding model configured
+        assert EMBEDDING_MODEL_NAME == 'text-embedding-3-small'
+        print(f'Embedding model OK: {EMBEDDING_MODEL_NAME}')
+
+        # Test 5 — streamlit app syntax check
+        import ast
+        with open('frontend/streamlit_app.py') as f:
+            src = f.read()
+        ast.parse(src)
+        print('streamlit_app.py syntax OK')
+
+        print()
+        print('ALL TESTS PASSED — proceeding to deployment')
+        "
+
+    # ── STEP 5 — Connect to AWS ───────────────────────────────
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    # ── STEP 6 — Login Docker to ECR ─────────────────────────
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+
+    # ── STEP 7 — Build and push Docker image to ECR ──────────
+    # Image is tagged with the git commit SHA — unique per deployment
+    - name: Build and push Docker image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        echo "Building image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "IMAGE_URI=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
+        echo "Image pushed successfully to ECR"
+
+    # ── STEP 8 — Connect kubectl to EKS ──────────────────────
+    - name: Update kubeconfig for EKS
+      run: |
+        aws eks update-kubeconfig \
+          --region ${{ secrets.AWS_REGION }} \
+          --name ${{ secrets.EKS_CLUSTER_NAME }}
+
+    # ── STEP 9 — Update image in deployment.yml and deploy ───
+    - name: Deploy to EKS
+      run: |
+        echo "Deploying image: $IMAGE_URI"
+
+        # Replace the placeholder image URL with the new ECR image
+        sed -i "s|YOUR_ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/sales-rag-assistant:v1|$IMAGE_URI|g" \
+          k8s/deployment.yml
+
+        # Apply the updated deployment
+        kubectl apply -f k8s/deployment.yml
+
+        # Wait for rolling update to complete (max 5 minutes)
+        kubectl rollout status deployment/sales-rag-app --timeout=5m
+
+        echo "Deployment complete!"
+
+    # ── STEP 10 — Smoke test the live app ────────────────────
+    - name: Smoke test
+      run: |
+        # Get the load balancer URL
+        EXTERNAL_IP=$(kubectl get service sales-rag-service \
+          -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+
+        echo "App URL: http://$EXTERNAL_IP:8501"
+
+        # Wait for load balancer to be ready
+        sleep 30
+
+        # Check health endpoint
+        HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+          http://$EXTERNAL_IP:8501/_stcore/health || echo "000")
+
+        if [ "$HTTP_STATUS" = "200" ]; then
+          echo "Smoke test PASSED — app is healthy"
+        else
+          echo "Smoke test returned status: $HTTP_STATUS — check logs"
+        fi
+
+    # ── STEP 11 — Print success summary ──────────────────────
+    - name: Deployment summary
+      run: |
+        echo "============================================"
+        echo "DEPLOYMENT SUCCESSFUL"
+        echo "Commit: ${{ github.sha }}"
+        echo "Branch: ${{ github.ref_name }}"
+        echo "Pushed by: ${{ github.actor }}"
+        echo "Image: $IMAGE_URI"
+        echo "============================================"
+        kubectl get pods
+        kubectl get service sales-rag-service

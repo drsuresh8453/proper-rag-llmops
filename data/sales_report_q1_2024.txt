@@ -1,0 +1,260 @@
+SALES PERFORMANCE REPORT — Q1 2024
+Company: DV Analytics Solutions Pvt Ltd
+Report Period: January 2024 to March 2024
+Prepared by: Sales Operations Team
+
+==========================================================
+EXECUTIVE SUMMARY
+==========================================================
+
+The company recorded total revenue of Rs 4.82 crore in Q1 2024, representing a 23% growth compared to Q1 2023 which was Rs 3.91 crore. The team closed 187 deals across all regions. The average deal size was Rs 2.57 lakh. The win rate improved from 34% in Q1 2023 to 41% in Q1 2024.
+
+The South region led all regions with Rs 1.94 crore in revenue. The Enterprise segment contributed 58% of total revenue. The SaaS product line was the top performing product with Rs 2.1 crore in sales. Customer acquisition cost reduced by 12% compared to last quarter.
+
+==========================================================
+JANUARY 2024 — MONTHLY BREAKDOWN
+==========================================================
+
+January 2024 Total Revenue: Rs 1.42 crore
+January 2024 Total Deals Closed: 54 deals
+January 2024 New Customers Acquired: 21 customers
+January 2024 Upsell Revenue: Rs 38 lakh
+January 2024 Average Deal Size: Rs 2.63 lakh
+
+January was a slow start to the year due to budget freeze at many enterprise clients. However the mid-market segment performed well with 31 deals closed. The SaaS product brought in Rs 72 lakh in January. The consulting services segment contributed Rs 41 lakh. Hardware and infrastructure sales were Rs 29 lakh in January.
+
+Top performing sales rep in January was Arjun Nair from the South region who closed 9 deals worth Rs 24 lakh. The Bengaluru office led January with Rs 58 lakh. Mumbai office contributed Rs 47 lakh in January. Delhi office recorded Rs 37 lakh in January.
+
+January had 3 deals lost to competitor Salesforce totalling Rs 18 lakh. Pipeline at end of January was Rs 12.4 crore across 312 qualified opportunities. January churn was low with only 2 customers not renewing, worth Rs 4.2 lakh annual recurring revenue.
+
+==========================================================
+FEBRUARY 2024 — MONTHLY BREAKDOWN
+==========================================================
+
+February 2024 Total Revenue: Rs 1.61 crore
+February 2024 Total Deals Closed: 63 deals
+February 2024 New Customers Acquired: 28 customers
+February 2024 Upsell Revenue: Rs 52 lakh
+February 2024 Average Deal Size: Rs 2.56 lakh
+
+February showed strong recovery with a 13.4% month-on-month increase. The enterprise deals picked up significantly as budget cycles opened. The team closed 4 deals above Rs 10 lakh each in February. The largest single deal in February was with Tata Consultancy Services for Rs 18.4 lakh for an annual SaaS subscription.
+
+The SaaS product brought Rs 89 lakh in February. Consulting services contributed Rs 47 lakh. Hardware sales were Rs 25 lakh in February.
+
+Top performing sales rep in February was Priya Sharma from the West region who closed 11 deals worth Rs 31 lakh including the TCS deal. The Pune office had a breakout month with Rs 44 lakh, up from Rs 21 lakh in January. Chennai office contributed Rs 39 lakh in February. Hyderabad office recorded Rs 33 lakh.
+
+The marketing team ran a webinar campaign in February that generated 84 new qualified leads. Email campaign conversion rate was 3.2% in February. The referral program brought 9 new customers in February worth Rs 14 lakh combined.
+
+February pipeline grew to Rs 14.1 crore. February had 1 deal lost to a competitor worth Rs 9 lakh. Customer satisfaction score in February was 4.3 out of 5 based on 47 survey responses.
+
+==========================================================
+MARCH 2024 — MONTHLY BREAKDOWN
+==========================================================
+
+March 2024 Total Revenue: Rs 1.79 crore
+March 2024 Total Deals Closed: 70 deals
+March 2024 New Customers Acquired: 34 customers
+March 2024 Upsell Revenue: Rs 61 lakh
+March 2024 Average Deal Size: Rs 2.56 lakh
+
+March was the strongest month of Q1 driven by end-of-quarter urgency and 3 large enterprise deals closing. Total revenue of Rs 1.79 crore was an all-time monthly record for the company. The team exceeded March quota of Rs 1.5 crore by 19.3%.
+
+The three large enterprise deals in March were: Infosys deal worth Rs 22 lakh, HDFC Bank deal worth Rs 19 lakh, and Wipro deal worth Rs 16 lakh. All three were annual SaaS contracts with 3-year commitments.
+
+The SaaS product brought Rs 98 lakh in March. Consulting services contributed Rs 53 lakh. Hardware sales were Rs 28 lakh in March.
+
+Top performing sales rep in March was Vikram Singh from the North region with 13 deals worth Rs 38 lakh. Second was Sneha Reddy with 11 deals worth Rs 29 lakh. The entire North region team exceeded quota in March for the first time in 6 months.
+
+The Bengaluru office had Rs 74 lakh in March. Mumbai office had Rs 56 lakh. Delhi office had Rs 49 lakh. Pune contributed Rs 35 lakh. Chennai and Hyderabad together contributed Rs 65 lakh in March.
+
+March pipeline end-of-month was Rs 16.8 crore — a 19.1% increase from February. Deals lost in March were 4, totalling Rs 21 lakh. Average sales cycle length in March was 42 days, down from 51 days in January.
+
+==========================================================
+REGIONAL PERFORMANCE — Q1 2024
+==========================================================
+
+SOUTH REGION
+Q1 Revenue: Rs 1.94 crore
+Q1 Deals: 72 deals
+Q1 New Customers: 31
+Key cities: Bengaluru, Chennai, Hyderabad
+Top rep: Arjun Nair (Rs 68 lakh in Q1)
+South region grew 31% compared to Q1 2023.
+The Bengaluru office alone contributed Rs 1.21 crore in Q1.
+South region win rate was 47% — highest among all regions.
+
+WEST REGION
+Q1 Revenue: Rs 1.28 crore
+Q1 Deals: 51 deals
+Q1 New Customers: 22
+Key cities: Mumbai, Pune
+Top rep: Priya Sharma (Rs 71 lakh in Q1)
+West region grew 18% compared to Q1 2023.
+Mumbai contributed Rs 78 lakh and Pune contributed Rs 50 lakh in Q1.
+West region closed the TCS and HDFC Bank deals.
+
+NORTH REGION
+Q1 Revenue: Rs 1.12 crore
+Q1 Deals: 44 deals
+Q1 New Customers: 19
+Key cities: Delhi, Noida, Gurgaon
+Top rep: Vikram Singh (Rs 62 lakh in Q1)
+North region grew 14% compared to Q1 2023 — lowest growth among regions.
+North region struggled in January and February but recovered strongly in March.
+Pipeline coverage ratio improved to 4.8x by end of March.
+
+EAST REGION (new in 2024)
+Q1 Revenue: Rs 48 lakh
+Q1 Deals: 20 deals
+Q1 New Customers: 11
+Key cities: Kolkata, Bhubaneswar
+East region was launched in January 2024 with 5 new hires.
+First quarter performance exceeded initial target of Rs 30 lakh.
+
+==========================================================
+PRODUCT LINE PERFORMANCE — Q1 2024
+==========================================================
+
+SAAS PLATFORM
+Q1 Revenue: Rs 2.1 crore (44% of total)
+Q1 New Subscriptions: 63
+Average contract value: Rs 3.33 lakh per year
+Renewal rate: 91%
+SaaS growth was 38% vs Q1 2023.
+Monthly recurring revenue at end of Q1: Rs 70 lakh per month.
+Net revenue retention rate: 118% — meaning existing customers expanded spend by 18%.
+
+CONSULTING SERVICES
+Q1 Revenue: Rs 1.41 crore (29% of total)
+Q1 Projects delivered: 28
+Average project size: Rs 5.04 lakh
+Utilisation rate: 84%
+Consulting grew 12% vs Q1 2023.
+Customer satisfaction for consulting projects: 4.5 out of 5.
+
+HARDWARE AND INFRASTRUCTURE
+Q1 Revenue: Rs 82 lakh (17% of total)
+Q1 Units sold: 94 units
+Hardware was flat compared to Q1 2023 — consistent with company strategy to focus on SaaS.
+
+TRAINING AND CERTIFICATION
+Q1 Revenue: Rs 49 lakh (10% of total)
+Q1 Participants trained: 412
+Average revenue per participant: Rs 11,893
+Training revenue grew 52% vs Q1 2023 — fastest growing product line.
+
+==========================================================
+SALES TEAM PERFORMANCE — TOP 10 REPS Q1 2024
+==========================================================
+
+Rank 1: Priya Sharma — West Region — Rs 71 lakh — 24 deals
+Rank 2: Arjun Nair — South Region — Rs 68 lakh — 27 deals
+Rank 3: Vikram Singh — North Region — Rs 62 lakh — 21 deals
+Rank 4: Sneha Reddy — South Region — Rs 58 lakh — 22 deals
+Rank 5: Rahul Menon — West Region — Rs 54 lakh — 19 deals
+Rank 6: Divya Krishnan — South Region — Rs 49 lakh — 18 deals
+Rank 7: Karan Malhotra — North Region — Rs 45 lakh — 17 deals
+Rank 8: Pooja Iyer — West Region — Rs 41 lakh — 16 deals
+Rank 9: Amit Tiwari — North Region — Rs 38 lakh — 14 deals
+Rank 10: Lakshmi Devi — South Region — Rs 35 lakh — 13 deals
+
+Total top 10 revenue: Rs 5.21 lakh — wait, total top 10 revenue was Rs 5.21 crore representing 108% of quota for these reps combined.
+
+The remaining 12 reps in the team contributed Rs 2.39 lakh total — wait, Rs 2.39 crore total, averaging 74% of quota.
+
+Quota attainment breakdown:
+Above 120% quota: 4 reps
+100 to 120% quota: 6 reps
+80 to 100% quota: 8 reps
+Below 80% quota: 4 reps
+
+==========================================================
+PIPELINE AND FORECAST — END OF Q1 2024
+==========================================================
+
+Total pipeline at end of March 2024: Rs 16.8 crore
+Qualified pipeline (stage 3 and above): Rs 9.2 crore
+Expected Q2 2024 revenue from current pipeline: Rs 5.1 crore
+Q2 2024 revenue target: Rs 5.5 crore
+Pipeline coverage ratio: 3.05x
+
+Pipeline by stage:
+Stage 1 — Prospecting: Rs 4.2 crore (124 opportunities)
+Stage 2 — Qualification: Rs 3.6 crore (89 opportunities)
+Stage 3 — Proposal sent: Rs 4.1 crore (67 opportunities)
+Stage 4 — Negotiation: Rs 3.4 crore (32 opportunities)
+Stage 5 — Closing: Rs 1.5 crore (18 opportunities)
+
+Biggest deals in pipeline for Q2:
+Reliance Industries — Rs 45 lakh (SaaS + Consulting) — Stage 4
+Amazon India — Rs 38 lakh (SaaS) — Stage 3
+Flipkart — Rs 29 lakh (Training + SaaS) — Stage 4
+Myntra — Rs 24 lakh (Consulting) — Stage 3
+Zomato — Rs 21 lakh (SaaS) — Stage 5 — expected to close in April
+
+==========================================================
+CUSTOMER METRICS — Q1 2024
+==========================================================
+
+Total active customers at end of Q1: 284
+New customers added in Q1: 83
+Customers churned in Q1: 7
+Net new customers in Q1: 76
+Customer retention rate: 97.5%
+
+Customer segment breakdown:
+Enterprise (above Rs 10 lakh annual): 41 customers — Rs 2.8 crore revenue
+Mid-market (Rs 2 lakh to Rs 10 lakh annual): 118 customers — Rs 1.54 crore revenue
+SMB (below Rs 2 lakh annual): 125 customers — Rs 48 lakh revenue
+
+Net Promoter Score (NPS) for Q1 2024: 67 — up from 58 in Q1 2023.
+Average customer lifetime value: Rs 18.4 lakh.
+Average customer acquisition cost: Rs 1.2 lakh.
+LTV to CAC ratio: 15.3x — healthy and improving.
+
+Top 5 customers by revenue in Q1:
+1. Tata Consultancy Services — Rs 22 lakh
+2. Infosys — Rs 19 lakh (closed in March)
+3. Wipro — Rs 16 lakh (closed in March)
+4. HDFC Bank — Rs 14 lakh
+5. Mahindra Group — Rs 12 lakh
+
+==========================================================
+CHALLENGES AND LOSSES — Q1 2024
+==========================================================
+
+Total deals lost in Q1: 18 deals worth Rs 48 lakh combined.
+Lost to Salesforce: 6 deals worth Rs 21 lakh.
+Lost to Zoho CRM: 4 deals worth Rs 12 lakh.
+Lost to no decision (budget freeze): 5 deals worth Rs 9 lakh.
+Lost to internal build: 3 deals worth Rs 6 lakh.
+
+Main reasons for losing deals:
+Pricing too high mentioned by 8 clients.
+Feature gaps in mobile app mentioned by 5 clients.
+Longer implementation timeline mentioned by 4 clients.
+Preference for established brand mentioned by 3 clients.
+
+Win rate against Salesforce improved from 28% to 35% in Q1 due to competitive pricing strategy introduced in February.
+
+==========================================================
+Q2 2024 TARGETS AND STRATEGY
+==========================================================
+
+Q2 2024 Revenue Target: Rs 5.5 crore
+Q2 2024 New Customer Target: 95 customers
+Q2 2024 SaaS Target: Rs 2.8 crore
+Q2 2024 Consulting Target: Rs 1.6 crore
+
+Key initiatives for Q2:
+1. Launch partner program targeting 20 system integrators
+2. Introduce SMB self-service subscription at Rs 25,000 per month
+3. Expand East region team from 5 to 12 reps
+4. Launch mobile app version 2.0 to address feature gap complaints
+5. Run Q2 promotional pricing — 20% discount for annual contracts signed before June 15
+
+Hiring plan for Q2: 8 new sales reps, 3 pre-sales engineers, 2 customer success managers.
+
+==========================================================
+END OF REPORT
+==========================================================

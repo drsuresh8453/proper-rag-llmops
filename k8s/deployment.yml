@@ -1,0 +1,85 @@
+# deployment.yml — Sales RAG Assistant on Kubernetes (EKS)
+# Author: Suresh D R | AI Product Developer & Technology Mentor
+#
+# This file tells Kubernetes:
+#   1. Run 2 copies of the RAG app from ECR image
+#   2. Create an AWS Load Balancer with a public URL
+#
+# Replace YOUR_ACCOUNT_ID with your 12-digit AWS account ID
+# Example: 968603941077.dkr.ecr.ap-south-1.amazonaws.com/sales-rag-assistant:v1
+#
+# Apply with: kubectl apply -f k8s/deployment.yml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sales-rag-app               # name of this deployment
+  labels:
+    app: sales-rag                  # label to group related resources
+spec:
+  replicas: 2                       # run 2 pods (containers) at all times
+                                    # if one crashes Kubernetes starts a replacement
+  selector:
+    matchLabels:
+      app: sales-rag                # this deployment manages pods with this label
+  strategy:
+    type: RollingUpdate             # update pods one by one — zero downtime
+    rollingUpdate:
+      maxUnavailable: 1             # at most 1 pod unavailable during update
+      maxSurge: 1                   # at most 1 extra pod during update
+  template:
+    metadata:
+      labels:
+        app: sales-rag              # every pod gets this label
+    spec:
+      containers:
+      - name: sales-rag-container
+        image: 968603941077.dkr.ecr.ap-south-1.amazonaws.com/sales-rag-assistant:v1
+                                    # ← REPLACE YOUR_ACCOUNT_ID with your AWS account ID
+                                    # Kubernetes pulls this image from ECR
+        ports:
+        - containerPort: 8501       # Streamlit runs on port 8501 inside container
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: rag-secrets     # name of Kubernetes secret (created separately)
+              key: openai-api-key   # key inside the secret
+                                    # API key is NEVER hardcoded here
+        resources:
+          requests:
+            memory: "512Mi"         # minimum RAM — Kubernetes finds a node with this
+            cpu: "250m"             # minimum CPU (250 millicores = 0.25 of 1 CPU)
+          limits:
+            memory: "1Gi"           # maximum RAM this container can use
+            cpu: "500m"             # maximum CPU
+        readinessProbe:             # checks if pod is ready to receive traffic
+          httpGet:
+            path: /_stcore/health  # Streamlit health endpoint
+            port: 8501
+          initialDelaySeconds: 15  # wait 15s after start before first check
+          periodSeconds: 30        # check every 30 seconds
+          failureThreshold: 3      # fail 3 times before marking as not ready
+        livenessProbe:             # restarts pod if this fails
+          httpGet:
+            path: /_stcore/health
+            port: 8501
+          initialDelaySeconds: 30
+          periodSeconds: 60
+          failureThreshold: 3
+
+---
+# Service — creates AWS Load Balancer with public URL
+apiVersion: v1
+kind: Service
+metadata:
+  name: sales-rag-service           # name of this service
+spec:
+  type: LoadBalancer                # creates AWS Application Load Balancer
+                                    # gives you a public URL automatically
+  selector:
+    app: sales-rag                  # routes traffic to pods with this label
+  ports:
+  - protocol: TCP
+    port: 8501                      # port the load balancer listens on (public)
+    targetPort: 8501                # port on the pod to forward traffic to
